@@ -1,0 +1,10 @@
+# seed-from: https://app.mayhem.security/savantenvs/rhai/fuzz-serde
+project: savantenvs/rhai
+target: fuzz_serde-mined-423f21e
+cmds:
+  - cmd: /mayhem/fuzz_serde
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/rhai_keywords.dict
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_serde-mined-423f21e/testsuite
